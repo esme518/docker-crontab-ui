@@ -20,7 +20,7 @@ RUN set -ex \
 WORKDIR /crontab-ui
 
 RUN set -ex \
-  && git clone https://github.com/alseambusher/crontab-ui.git . \
+  && git clone --depth 1 https://github.com/alseambusher/crontab-ui.git . \
   && rm -rf .git* .circleci .dockerignore Dockerfile docker-compose.yml \
   && mv supervisord.conf /etc/supervisord.conf \
   && echo "" > $CRON_PATH/root \
